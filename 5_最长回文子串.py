@@ -23,7 +23,6 @@
 
 执行用时 : 796 ms, 在Longest Palindromic Substring的Python3提交中击败了74.20% 的用户
 内存消耗 : 13 MB, 在Longest Palindromic Substring的Python3提交中击败了93.94% 的用户
-
 """
 
 
