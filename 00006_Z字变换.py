@@ -3,7 +3,7 @@
 # @Time    : 2019/5/22 8:56
 # @Author  : GuoChang
 # @Site    : https://github.com/xiphodon
-# @File    : 6_Z字变换.py
+# @File    : 00006_Z字变换.py
 # @Software: PyCharm
 
 """

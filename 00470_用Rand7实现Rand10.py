@@ -3,7 +3,7 @@
 # @Time    : 2019/5/22 11:28
 # @Author  : GuoChang
 # @Site    : https://github.com/xiphodon
-# @File    : 470_用Rand7实现Rand10.py
+# @File    : 00470_用Rand7实现Rand10.py
 # @Software: PyCharm
 
 """
