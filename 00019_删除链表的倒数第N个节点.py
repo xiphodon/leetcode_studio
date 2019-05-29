@@ -90,16 +90,13 @@ class Solution:
         :param lst:
         :return:
         """
-        head = None
-        last_node = None
+        head = ListNode(None)
+        p = head
         for i in range(len(lst)):
             node = ListNode(lst[i])
-            if i == 0:
-                head = node
-            else:
-                last_node.next = node
-            last_node = node
-        return head
+            p.next = node
+            p = node
+        return head.next
 
     def print_singly_link_list(self, head):
         """
