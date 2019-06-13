@@ -55,14 +55,16 @@ class Solution:
         :param target:
         :return:
         """
+
+        # 排序，有序列表方便后期处理
         candidates.sort()
 
+        # 结果收集集
         res_list = list()
 
-        def backtrack(sub_candidates: List[int], item_list: List, start=0):
+        def backtrack(item_list: List, start: int):
             """
             回溯体
-            :param sub_candidates:
             :param item_list: 一次深度优先遍历的结果列表
             :param start: 因为是有序列表，深层的循环起始从start开始即可，防重复
             :return:
@@ -72,13 +74,10 @@ class Solution:
                 res_list.append(item_list.copy())
 
             elif sum(item_list) < target:
-                # 列表的和暂未收集到target
-                for i in range(start, len(sub_candidates)):
-                    # 从上一层递归中的起始位置开始，因为列表顺序，防止结果集重复
-
-                    # 记录此次起始位置，若有下一次递归，因为顺序列表，下一个数从这次起始位置开始即可（同一个数允许使用多次）
-                    start = i
-                    item = sub_candidates[i]
+                # 列表的和暂未收集够target的值
+                # 从上一层递归中的起始位置开始，因为列表顺序，防止结果集重复
+                for i in range(start, len(candidates)):
+                    item = candidates[i]
                     if item + sum(item_list) > target:
                         # 求和溢出，丢弃
                         break
@@ -86,11 +85,12 @@ class Solution:
                         # 列表和仍未够target，当前数入栈
                         item_list.append(item)
                         # 递归调用
-                        backtrack(sub_candidates, item_list, start)
+                        # 因为顺序列表，下一个数从这次起始位置开始即可（同一个数允许使用多次）
+                        backtrack(item_list, i)
                         # 当前数的所有情况均已遍历过，弹出当前数，换下一个数继续遍历
                         item_list.pop()
 
-        backtrack(candidates, [])
+        backtrack(item_list=[], start=0)
         return res_list
 
 
