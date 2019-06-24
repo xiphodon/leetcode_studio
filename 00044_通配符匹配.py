@@ -73,6 +73,8 @@ class Solution:
         def match(s: str, p: str):
             """
             匹配
+            :param s: 待匹配字符串
+            :param p: 匹配模式串
             :return:
             """
             # 若之前已缓存，则直接返回
