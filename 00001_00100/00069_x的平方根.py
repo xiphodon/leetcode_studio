@@ -47,7 +47,7 @@ class Solution:
             return 0
 
         # 数字平方根下限
-        start_root_int = 1
+        start_root_int = 0
         # 数字平方根上限
         end_root_int = x // 2 + 1
 
